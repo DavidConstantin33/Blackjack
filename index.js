@@ -48,26 +48,26 @@ let standBtn = document.getElementById('stand');
 let playerScore = 0;
 
 hitBtn.addEventListener('click', function () {
-    if(!playing) {
+    if (!playing) {
         return;
     }
 
-        heading.textContent = 'Good Luck!';
-        let card = generateRandomCard();
-        blankCard.classList.add('hidden');
+    heading.textContent = 'Good Luck!';
+    let card = generateRandomCard();
+    blankCard.classList.add('hidden');
 
-        let newCard = document.createElement('img');
-        newCard.classList.add('random-cards');
-        newCard.src = card.imageUrl;
-        youDeck.appendChild(newCard);
+    let newCard = document.createElement('img');
+    newCard.classList.add('random-cards', 'fadeIn');
+    newCard.src = card.imageUrl;
+    youDeck.appendChild(newCard);
 
-        playerScore += card.value;
-        score.textContent = `Score: ${playerScore}`;
+    playerScore += card.value;
+    score.textContent = `Score: ${playerScore}`;
 
-        if (playerScore > 21) {
+    if (playerScore > 21) {
         playing = false;
         dealerTurn();
-        }
+    }
 });
 
 function dealerTurn() {
@@ -94,7 +94,7 @@ function dealerTurn() {
         let card = generateRandomCard();
 
         let newDealerCard = document.createElement('img');
-        newDealerCard.classList.add('random-cards');
+        newDealerCard.classList.add('random-cards', 'fadeIn'); 
         newDealerCard.src = card.imageUrl;
         dealerDeck.appendChild(newDealerCard);
 
@@ -102,6 +102,7 @@ function dealerTurn() {
         document.getElementById('scoreDealer').textContent = `Score: ${dealerScore}`;
     }
 
+    document.querySelectorAll('.dealer .random-cards').forEach(card => card.classList.add('fadeIn'));
 
     winner(playerScore, dealerScore);
 }
