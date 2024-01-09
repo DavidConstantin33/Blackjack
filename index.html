@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <title>BlackJack</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="menu">
+<img src="menu.png"  class="menu" id="menu" onclick="menuShow()" alt="menu">
+    <div class="menuItems">
+        <a href="Htp.html"><button>How to play</button></a>
+        <a href="mygh.html"><button>My Github</button></a>
+    </div>
+</div>
+<h1>BlackJack</h1>
+
+<div class="game">
+
+<div class="dealer">
+    <p>Dealer</p>
+    <img src="blank.png" class="card" id="card-dealer" alt="empty">
+</div>
+    <p id="scoreDealer">Score:</p>
+
+    <div class="paragraph"><p>Press "Hit" to play!</p></div>
+
+
+<div class="you">
+    <p id="scorePlayer">Score:</p>
+    <img src="blank.png" class="card" id="card-player" alt="empty">
+</div>
+    <p>You</p>
+</div>
+
+<div class="buttons">
+    <button class="btn" id="hit">Hit</button>
+    <button class="btn" id="stand">Stand</button>
+</div>
+<button class="btn" onclick="playAgain()" >Play again</button>
+
+
+<footer>
+    <p>Constantin David @2024</p>
+</footer>
+
+<script src="index.js"></script>
+
+</body>
+</html>
